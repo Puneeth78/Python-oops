@@ -1,3 +1,4 @@
+# examples based on oops
 # 👉 Create a base class Shape with a method calculate_area().
 # Override this method in the derived classes Circle and Rectangle to calculate and print their respective areas.
 class shape:
