@@ -81,3 +81,48 @@ Student1.student_marks()
 
 
 
+# encapsulation
+class ATM:
+    def __init__(self,balance):
+        self.__balance=balance 
+
+    def deposit(self,amount):
+        self.__balance+=amount
+        print(f"deposited {amount}.New balance:{self.__balance}")
+
+    def withdraw(self,amount):
+        if amount<=self.__balance:
+            self.__balance-=amount
+            print(f"withdraw:{amount}.New balance:{self.__balance}")
+        else:
+            print(f"insufficient balance")
+
+atm=ATM(1000)
+atm.deposit(500)
+atm.withdraw(500)
+
+# inheritance
+class User:
+    def __init__(self,username):
+        self.username=username
+
+    def login(self):
+        print(f"{self.username} logged in")
+
+class admin(User):
+    def delete_user(self):
+        print("admin delete the user")
+
+class owner(admin):
+    def remove_admin(self):
+        print("owner remove admin")
+      
+u=admin("puneeth")
+u.login()
+u.delete_user()
+
+o=owner("boss")
+o.login()
+o.remove_admin()
+# print(u.username)
+

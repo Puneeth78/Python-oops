@@ -4,7 +4,7 @@
 # it typically achived through the method overridding and interfaces
 
 # method overrriding 
-# the method overiding allows a child class provide the specific implementation 
+# the method overiding allows a child class provide the specific or own implementation 
 # of  a method is already present in the parent class
 
 # base class
@@ -28,6 +28,7 @@ Dog1=Dog()
 print(Dog1.speak())
 
 # another example
+# polymorphism with functions and methods
 class Shape:
     def area(self):
         return "the area of the figure"
@@ -48,7 +49,7 @@ class Circle(Shape):
         return 3.142*self.radius*self.radius
     
 # function that demonstrate
-
+#   the parameter receives any object and call the area method of that object
 def print_area(shape):   #duck type it not care about the wheather it is rectangle or circle
     print(f"the area : {shape.area()}")
 
@@ -83,4 +84,40 @@ Vechile=[Car(),Bike()]
 for v in Vechile:
     start(v)
 
-# conclusion
+class Animal:
+    def __init__(self,name):
+        self.name=name
+
+    def make_sound(self):
+        return "like bow bow!"
+
+class Dog(Animal):
+    def __init__(self,name,age):
+        super().__init__(name)
+        self.age=age
+
+    def make_sound(self):
+        return "Woof!"
+    
+dog1=Dog("puppy",45)
+print(dog1.name)
+print(dog1.age)
+print(dog1.make_sound())
+
+
+# polymorphisim
+class Animal:
+    def make_sound(self):
+        print("animal make sound")
+
+class dog(Animal):
+    def make_sound(self):
+        print("bark") 
+    
+class cat(Animal):
+    def make_sound(self):
+        print("meow") 
+    
+l=[dog(),cat()]
+for animal in l:
+    animal.make_sound()

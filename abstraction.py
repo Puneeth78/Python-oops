@@ -1,7 +1,7 @@
 # from abc import ABC, abstractmethod
 
 
-# class Animal(ABC):   # abstract class
+# class Animal(ABC):   # abstract base class
 
 #     @abstractmethod
 #     def sound(self):

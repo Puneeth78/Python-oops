@@ -222,3 +222,20 @@ class Manager(employee):
 
 s=Manager()
 s.calculated_salary()
+
+
+# Using a Database class:
+class database:
+    def __init__(self):
+        self.__storage={}
+
+    def save_data(self,key,value):
+        self.__storage[key]=value
+        print(f"data saved for {key}")
+
+    def get_data(self,key):
+        return self.__storage.get(key,"no data found")
+    
+db=database()
+db.save_data("user_101",{"name":"raj","age":30})
+print(db.get_data("user_101"))
